@@ -1,0 +1,7 @@
+[package]
+name = "dingli"
+version = "0.1.0"
+entrypoint = "dingli.typ"
+authors = ["Feifei"]
+license = "MIT"
+description = "Theorem environments"
