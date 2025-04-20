@@ -2,8 +2,9 @@
 #let c_lem = counter("lemma")
 #let c_cor = counter("corollary")
 #let c_def = counter("definition")
+#let c_rmk = counter("remark")
 #let c_list = (c_thm, c_lem, c_cor, c_def)
-#let kind_list = ("theorem", "lemma", "corollary", "definition")
+#let kind_list = ("theorem", "lemma", "corollary", "definition", "remark")
 
 #let parvirtual = {
 "" 
@@ -24,6 +25,7 @@ context v(-par.spacing -  measure("").height)
     if it.kind in kind_list {
       v(2em, weak: true)
       set align(start)
+      set block(breakable: true)
       it
       parvirtual
       v(2em, weak: true)
@@ -68,6 +70,23 @@ context v(-par.spacing -  measure("").height)
 }
   
   
+#let remark(body, name: none, kind: "remark", type: "Remark", count: c_rmk, indent: none) = {
+  // return (body, headnumber, thmnumber) => {
+    return (figure({
+      count.step()
+      block[
+      #if indent != none {
+      parvirtual
+      }
+      #if name == none {[
+        *#type *#h(0.4em)
+      ]} else {[
+        *#type *
+      ]}
+      #body]
+    }, kind: kind, supplement: type))
+  // }
+}
 
 // #let theorem(body, name: none, type: "Theorem", count: c_thm, indent: none) = block(above: 2em, below: 2em)[
 //   #count.step()
