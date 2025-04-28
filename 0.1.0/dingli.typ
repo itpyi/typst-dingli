@@ -62,7 +62,7 @@ context v(-par.spacing -  measure("").height)
       #if name == none {[
         *#type #headnumber.#thmnumber.*#h(0.4em)
       ]} else {[
-        *#type #headnumber.#thmnumber* (#name)*.*
+        *#type #headnumber.#thmnumber* (#name)*.*#h(0.4em)
       ]}
       #body]
     }, kind: kind, supplement: type))
@@ -79,9 +79,9 @@ context v(-par.spacing -  measure("").height)
       parvirtual
       }
       #if name == none {[
-        *#type *#h(0.4em)
+        *#type.*#h(0.4em)
       ]} else {[
-        *#type *
+        *#type.*
       ]}
       #body]
     }, kind: kind, supplement: type))
