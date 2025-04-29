@@ -5,9 +5,6 @@
   level: 0
 )
 
-#let theorem = theorem.with(level: 0)
-#let lemma = lemma.with(level: 0)
-
 #align(
   center,
   text(17pt)[

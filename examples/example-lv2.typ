@@ -4,8 +4,6 @@
 #show: dingli-rules.with(
   level: 2
 )
-#let theorem = theorem.with(level: 2)
-#let lemma = lemma.with(level: 2)
 
 #align(
   center,
