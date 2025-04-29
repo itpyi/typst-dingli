@@ -17,7 +17,6 @@
 #context{
   let ll = numbering-level.get()
   ll > 1
-  l > 1
 }
 
 #l
