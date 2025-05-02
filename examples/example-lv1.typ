@@ -1,6 +1,7 @@
 #import "../0.2.0/dingli.typ": *
 
-#show: dingli-rules
+#show: dingli-rules.with(level: 1)
+
 
 #align(
   center,
@@ -12,6 +13,7 @@
 #set heading(numbering: "1.")
 
 #theorem[This is the first theorem that is not in any section.]
+
 
 = Section
 

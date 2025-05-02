@@ -12,9 +12,9 @@
 context v(-par.spacing -  measure("").height)
 }
 
-#let numbering-level = state("level", 1)
+#let numbering-level = state("level", 0)
 
-#let thm-num() = {
+#let thm-num = {
   (..nums) => {
     let level = numbering-level.get()
     if level == 0 {
@@ -41,7 +41,7 @@ context v(-par.spacing -  measure("").height)
   count: c_thm, 
   indent: none,
 ) = {
-  let numbering = thm-num()
+  let numbering = thm-num
   let thmnumber = context count.get().at(0)
   return (figure({
     count.step()
@@ -112,7 +112,7 @@ context v(-par.spacing -  measure("").height)
 #let zhengming = proof.with(type: "证明", indent: true)
 
 
-#let dingli-rules(doc, level: 1, upper: 2em, lower: 2em) = {
+#let dingli-rules(doc, level: 0, upper: 2em, lower: 2em) = {
   numbering-level.update(level)
   show heading: it => {
     if it.level <= level {
@@ -143,7 +143,7 @@ context v(-par.spacing -  measure("").height)
     } else if it.element.func() == figure and it.element.kind in kind_list{
       link(
         it.element.location()
-      )[#it.element.supplement #thm-num()(..counter(heading).at(it.element.location()))#counter(figure.where(kind: it.element.kind)).at(it.element.location()).at(0)]
+      )[#it.element.supplement #thm-num(..counter(heading).at(it.element.location()))#counter(figure.where(kind: it.element.kind)).at(it.element.location()).at(0)]
     } else {
       it
     }

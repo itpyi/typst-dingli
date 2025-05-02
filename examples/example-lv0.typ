@@ -1,9 +1,7 @@
 #import "../0.2.0/dingli.typ": *
 
 // #set text(font: ("Libertinus Serif", "Songti SC"), size: 12pt)
-#show: dingli-rules.with(
-  level: 0
-)
+#show: dingli-rules
 
 #align(
   center,
